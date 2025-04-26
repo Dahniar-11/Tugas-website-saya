@@ -1,5 +1,10 @@
+/* Reset dasar */
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -10,12 +15,14 @@ body {
   color: #222;
 }
 
+/* Container */
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 30px 20px;
 }
 
+/* Navbar */
 nav {
   background-color: #abbac9;
   padding: 10px 20px;
@@ -28,13 +35,14 @@ nav {
 
 .logo {
   font-size: 20px;
-  font-style: bold;
   font-weight: bold;
   color: #333;
 }
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-links a {
@@ -49,11 +57,18 @@ nav {
   font-size: 14px;
 }
 
+.nav-links a:hover {
+  background-color: #007bff;
+  color: white;
+}
 
+/* Header */
 header {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .profile-img {
@@ -71,7 +86,7 @@ header {
 }
 
 h1 {
-  text-align: left;
+  text-align: center;
   font-size: 26px;
   margin-bottom: 15px;
 }
@@ -82,10 +97,12 @@ h1 {
   line-height: 1.7;
 }
 
+/* Section umum */
 section {
   padding: 40px 0;
 }
 
+/* Biodata */
 .biodata-container {
   display: flex;
   align-items: center;
@@ -111,6 +128,7 @@ section {
   border: 3px solid #ccc;
 }
 
+/* Skill Bar */
 .skill {
   margin-bottom: 25px;
 }
@@ -133,8 +151,12 @@ section {
   font-size: 13px;
 }
 
+/* Skills List */
 .skills-list {
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .skill-label {
@@ -142,25 +164,48 @@ section {
   background-color: #007bff;
   color: white;
   padding: 4px 10px;
-  margin: 5px 5px 0 0;
   border-radius: 20px;
   font-size: 13px;
 }
 
+/* Gallery */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+  gap: 10px;
 }
 
 .gallery img {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  margin: 10px;
+  border-radius: 10px;
 }
 
+/* Button tambahan */
+.selengkapnya {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.selengkapnya a {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.selengkapnya a:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
 footer {
   text-align: center;
   font-size: 13px;
@@ -168,4 +213,53 @@ footer {
   margin-top: 50px;
   padding-top: 20px;
   border-top: 1px solid #ddd;
+}
+
+/* Responsive untuk layar kecil (HP) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 250px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .intro-text {
+    margin-left: 0;
+    max-width: 90%;
+  }
+
+  .biodata-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .biodata-photo img {
+    width: 90%;
+    height: auto;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery img {
+    width: 90%;
+    height: auto;
+  }
+
+  .skills-list {
+    justify-content: center;
+  }
 }
